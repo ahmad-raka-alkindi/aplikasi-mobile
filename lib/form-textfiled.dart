@@ -49,13 +49,13 @@ class _MyFormState extends State<MyForm> {
           ),
           TextField(
             decoration: InputDecoration(
-              labelText: 'Nama Lengkap',
-              hintText: 'Misalnya masnoer',
+              labelText: 'email',
+              hintText: 'Misalnya @masnoer',
               border: OutlineInputBorder(),
-              prefixIcon: Icon(Icons.person),
+              prefixIcon: Icon(Icons.email),
             ),
             controller: _textEditingController,
-            keyboardType: TextInputType.text,
+            keyboardType: TextInputType.emailAddress,
             onChanged: (text) {
               print('sedang mengetik teks: ,$text');
             },
@@ -65,14 +65,14 @@ class _MyFormState extends State<MyForm> {
             onPressed: () {
               String inputText = _textEditingController.text;
               ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text('Nama anda adalah: $inputText')),
+                SnackBar(content: Text('Email anda adalah: $inputText')),
               );
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.amber,
               foregroundColor: Colors.black,
             ),
-            child: const Text('Tampilkan mama'),
+            child: const Text('Tampilkan Email'),
           ),
         ],
       ),

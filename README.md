@@ -1,17 +1,41 @@
-# flutter_application_1
+# Praktikum 1-5: Aplikasi Keuangan
 
-A new Flutter project.
+Aplikasi Flutter gabungan praktikum dengan dashboard layanan, pencatatan
+transaksi, kalkulator, login, dan pendaftaran akun.
 
-## Getting Started
+## Fitur
 
-This project is a starting point for a Flutter application.
+- Registrasi dan login lokal menggunakan SQLite. Password disimpan sebagai
+  hash dengan salt, bukan sebagai teks biasa.
+- Pencatatan pemasukan dan pengeluaran; data transaksi tersimpan per akun dan
+  tetap tersedia setelah aplikasi ditutup.
+- Saldo diperbarui dari saldo awal Rp 250.000 dan transaksi tersimpan.
+- Riwayat transaksi, detail transaksi, profil, logout, layanan, dan katalog
+  produk.
+- Kalkulator Kabataku dari praktikum sebelumnya dapat dibuka melalui menu
+  **Dompet**.
 
-A few resources to get you started if this is your first Flutter project:
+## Menjalankan dan menguji
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+```powershell
+flutter pub get
+flutter test
+flutter analyze
+flutter run
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+SQLite memakai database lokal `praktikum_1_5.db` pada perangkat. Menghapus data
+aplikasi akan menghapus akun dan transaksi lokal.
+
+## Membuat APK
+
+```powershell
+flutter build apk --release
+```
+
+Hasil build:
+
+`build/app/outputs/flutter-apk/app-release.apk`
+
+Konfigurasi proyek saat ini menggunakan signing debug untuk build release,
+sehingga APK cocok untuk pemasangan dan demo, bukan publikasi Play Store.
